@@ -1,0 +1,20 @@
+#define THRESHOLD 50
+task main()
+{
+ SetSensorLight(IN_3);
+ OnFwd(OUT_A, 20);
+ while (true)
+ {
+ 
+ TextOut(0, LCD_LINE7, "Sim   ");
+ if (Sensor(IN_3) > THRESHOLD)
+ {
+ TextOut(0, LCD_LINE7, "Não1   ");
+ OnRev(OUT_A, 10);
+ Wait(100);
+ }
+//else{ Sensor(IN_3) <= THRESHOLD);
+// OnFwd(OUT_A, 75); }
+
+ }
+}
