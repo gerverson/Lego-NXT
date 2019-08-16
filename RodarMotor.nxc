@@ -1,0 +1,20 @@
+task main(){
+// Mover o motor para frente
+OnFwd(OUT_ABC, 100);
+//Mover o motor com graus
+RotateMotor(OUT_A, 360);
+//Esperar tempo
+Wait(3000);
+//Mover o motor para tras
+OnRev(OUT_ABC, 75);
+//Para o motor com travar o motor
+Off(OUT_ABC);
+//para o motor sem travar o motor
+Coast(OUT_ABC);
+
+//Laco de repetir
+repeat(4){
+Wait(1000);
+}
+
+}

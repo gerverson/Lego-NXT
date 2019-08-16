@@ -1,0 +1,32 @@
+#define THRESHOLD 50
+task main()
+{
+  SetSensorColorFull(IN_2);
+	while(true){
+		unsigned int rawData[], normData[];
+		int scaledData[];
+		int cval;
+		int result = ReadSensorColorEx(S2, cval, rawData, normData, scaledData);
+
+		NumOut (0, LCD_LINE1, cval);
+
+		TextOut (0, LCD_LINE2, "                                                       ");
+		NumOut (0, LCD_LINE2, normData[INPUT_RED]);
+		NumOut (0, LCD_LINE6, scaledData[INPUT_RED]);
+
+		TextOut (0, LCD_LINE3, "                                                       ");
+		NumOut (0, LCD_LINE3, normData[INPUT_GREEN]);
+		NumOut (0, LCD_LINE7, scaledData[INPUT_GREEN]);
+
+		TextOut (0, LCD_LINE4, "                                                       ");
+		NumOut (0, LCD_LINE4, normData[INPUT_BLUE]);
+		NumOut (0, LCD_LINE8, scaledData[INPUT_BLUE]);
+
+
+	}
+ 
+ 
+ 
+ 
+ 
+}

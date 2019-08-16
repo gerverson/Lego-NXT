@@ -1,0 +1,26 @@
+task main(){
+      
+//Adiciona o sensor de touch
+// ao reconhecimento na porta 1
+SetSensorTouch(S1);
+      
+//Esse laço faz com que o sensor
+// de touche gire o motor se estiver
+// pressionado
+/*while(Sensor(S1) == 1){
+ OnFwd(OUT_ABC, 75);
+}*/
+
+//Esse laço faz com que o sensor
+// de touche gire o motor se estiver
+// pressionado e gire ao contrario
+// se não estiver presionado
+while(1){
+   if(Sensor(S1) == 1){
+      OnFwd(OUT_ABC, 75);
+   }else{
+      OnRev(OUT_ABC, 75);
+   }
+}
+
+}
